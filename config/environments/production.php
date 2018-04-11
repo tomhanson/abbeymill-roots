@@ -1,5 +1,5 @@
 <?php
-$_dbsettings = parse_url(getenv("CLEARDB_DATABASE_URL"));/* Production */
+$_dbsettings = parse_url(getenv("DATABASE_URL"));/* Production */
 
 define('DB_NAME',       trim($_dbsettings["path"],"/"));
 define('DB_USER',       $_dbsettings["user"]             );
