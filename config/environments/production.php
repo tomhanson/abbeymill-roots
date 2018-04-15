@@ -8,7 +8,10 @@ define('DB_PASSWORD', $_dbsettings["pass"]          );
 define('DB_HOST',     $_dbsettings["host"]          );
 define('WP_HOME', getenv('WP_HOME'));
 define('WP_SITEURL', getenv('WP_SITEURL'));
-
+var_dump('DB_NAME');
+var_dump('DB_USER');
+var_dump('DB_PASSWORD');
+var_dump('DB_HOST');
 ini_set('display_errors', 0);
 define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
