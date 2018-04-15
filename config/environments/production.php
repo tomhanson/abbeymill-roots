@@ -1,7 +1,7 @@
 <?php
 $endpoint = 'mysql://tom:FClifesearch2@wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com/abbeymill';
 var_dump($endpoint);
-$_dbsettings = parse_url(getenv(endpoint));/* Production */
+$_dbsettings = parse_url($endpoint);/* Production */
 define('DB_NAME',       trim($_dbsettings["path"],"/"));
 define('DB_USER',       $_dbsettings["user"]             );
 define('DB_PASSWORD', $_dbsettings["pass"]          );
