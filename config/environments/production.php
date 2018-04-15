@@ -1,5 +1,7 @@
 <?php
-$_dbsettings = parse_url(getenv("DATABASE_URL"));/* Production */
+$endpoint = $_SERVER["DATABASE_URL"];
+var_dump($endpoint);
+$_dbsettings = parse_url($_SERVER["DATABASE_URL"]);/* Production */
 define('DB_NAME',       trim($_dbsettings["path"],"/"));
 define('DB_USER',       $_dbsettings["user"]             );
 define('DB_PASSWORD', $_dbsettings["pass"]          );

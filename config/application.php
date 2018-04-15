@@ -10,10 +10,7 @@ $webroot_dir = $root_dir . '/web';
  * Expose global env() function from oscarotero/env
  */
 Env::init();
-$endpoint = $_SERVER['DATABASE_URL'];
-var_dump($endpoint);
 
-die();
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
