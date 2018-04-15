@@ -55,10 +55,6 @@ define('DB_HOST', env('DB_HOST') ?: 'localhost');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
-var_dump(env('DB_NAME'));
-var_dump(env('DB_USER'));
-var_dump(env('DB_PASSWORD'));
-var_dump(env('DB_HOST'));
 /**
  * Authentication Unique Keys and Salts
  */
