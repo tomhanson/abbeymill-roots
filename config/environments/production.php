@@ -1,5 +1,5 @@
 <?php
-$endpoint = $_SERVER["WP_ENV"];
+$endpoint = 'mysql://tom:FClifesearch2@wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com/abbeymill';
 var_dump($endpoint);
 $_dbsettings = parse_url(getenv(endpoint));/* Production */
 define('DB_NAME',       trim($_dbsettings["path"],"/"));
