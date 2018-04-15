@@ -1,4 +1,6 @@
 <?php
+var_dump(getenv("DATABASE_URL"));
+var_dump($S_server["DATABASE_URL"]);
 $_dbsettings = parse_url(getenv("DATABASE_URL"));/* Production */
 define('DB_NAME',       trim($_dbsettings["path"],"/"));
 define('DB_USER',       $_dbsettings["user"]             );
