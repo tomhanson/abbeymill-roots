@@ -4,7 +4,6 @@ $test = $_SERVER['DATABASE_URL'];
 $test1 = getenv('DATABASE_URL');
 var_dump($test);
 var_dump($test1);
-die();
 $endpoint = 'mysql://tom:FClifesearch2@wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com/abbeymill';
 var_dump($endpoint);
 $_dbsettings = parse_url($endpoint);/* Production */
