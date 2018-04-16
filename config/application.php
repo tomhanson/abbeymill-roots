@@ -43,8 +43,10 @@ define("WP_SITEURL", env("WP_SITEURL"));
  */
 define("CONTENT_DIR", "/app");
 define("WP_CONTENT_DIR", $webroot_dir . CONTENT_DIR);
-define("WP_CONTENT_URL", WP_HOME . CONTENT_DIR)
-;
+define("WP_CONTENT_URL", WP_HOME . CONTENT_DIR);
+var_dump(getenv("DB_HOST"));
+var_dump(env("DB_HOST"));
+var_dump($_server["DB_HOST"]);
 /**
  * DB settings
  */
@@ -55,7 +57,8 @@ define("DB_HOST", env("DB_HOST") ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazon
 define("DB_CHARSET", "utf8mb4");
 define("DB_COLLATE", "");
 $table_prefix = env("DB_PREFIX") ?: "wp_";
-var_dump(getenv("DB_HOST"));
+
+
 /**
  * Authentication Unique Keys and Salts
  */
