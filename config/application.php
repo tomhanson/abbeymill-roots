@@ -16,7 +16,6 @@ Env::init();
  */
 $dotenv = new Dotenv\Dotenv($root_dir);
 if (file_exists($root_dir . "/.env")) {
-    var_dump('test');
     $dotenv->load();
     $dotenv->required(["DB_NAME", "DB_USER", "DB_PASSWORD", "WP_HOME", "WP_SITEURL"]);
 }
@@ -26,7 +25,7 @@ if (file_exists($root_dir . "/.env")) {
  */
 
 define("WP_ENV", env("WP_ENV") ?: "production");
-var_dump(env("WP_ENV"));
+var_dump(env("DB_HOST"));
 $env_config = __DIR__ . "/environments/" . WP_ENV . ".php";
 
 if (file_exists($env_config)) {
@@ -52,7 +51,7 @@ define("WP_CONTENT_URL", WP_HOME . CONTENT_DIR);
 define("DB_NAME", env("DB_NAME"));
 define("DB_USER", env("DB_USER"));
 define("DB_PASSWORD", env("DB_PASSWORD"));
-define("DB_HOST", DB_HOST ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
+define("DB_HOST", "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com" ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
 define("DB_CHARSET", "utf8mb4");
 define("DB_COLLATE", "");
 $table_prefix = env("DB_PREFIX") ?: "wp_";
