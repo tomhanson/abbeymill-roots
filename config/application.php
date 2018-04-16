@@ -51,11 +51,11 @@ define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR)
 define('DB_NAME', env('DB_NAME'));
 define('DB_USER', env('DB_USER'));
 define('DB_PASSWORD', env('DB_PASSWORD'));
-define('DB_HOST', env('DB_HOST') ?: 'localhost');
+define('DB_HOST', env('DB_HOST') ?: 'wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
-
+var_dump(env('DB_HOST'));
 /**
  * Authentication Unique Keys and Salts
  */
