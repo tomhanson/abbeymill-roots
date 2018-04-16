@@ -51,7 +51,7 @@ var_dump(DB_HOST);
 define("DB_NAME", DB_NAME);
 define("DB_USER", DB_USER);
 define("DB_PASSWORD", DB_PASSWORD);
-define("DB_HOST", DB_HOST ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
+define("DB_HOST", DB_HOST ?: "localhost");
 define("DB_CHARSET", "utf8mb4");
 define("DB_COLLATE", "");
 $table_prefix = DB_PREFIX ?: "wp_";
@@ -60,20 +60,20 @@ $table_prefix = DB_PREFIX ?: "wp_";
 /**
  * Authentication Unique Keys and Salts
  */
-define("AUTH_KEY", env("AUTH_KEY"));
-define("SECURE_AUTH_KEY", env("SECURE_AUTH_KEY"));
-define("LOGGED_IN_KEY", env("LOGGED_IN_KEY"));
-define("NONCE_KEY", env("NONCE_KEY"));
-define("AUTH_SALT", env("AUTH_SALT"));
-define("SECURE_AUTH_SALT", env("SECURE_AUTH_SALT"));
-define("LOGGED_IN_SALT", env("LOGGED_IN_SALT"));
-define("NONCE_SALT", env("NONCE_SALT"));
+define("AUTH_KEY", AUTH_KEY);
+define("SECURE_AUTH_KEY", SECURE_AUTH_KEY);
+define("LOGGED_IN_KEY", LOGGED_IN_KEY);
+define("NONCE_KEY", NONCE_KEY);
+define("AUTH_SALT", AUTH_SALT);
+define("SECURE_AUTH_SALT", SECURE_AUTH_SALT);
+define("LOGGED_IN_SALT", LOGGED_IN_SALT);
+define("NONCE_SALT", NONCE_SALT);
 
 /**
  * Custom Settings
  */
 define("AUTOMATIC_UPDATER_DISABLED", true);
-define("DISABLE_WP_CRON", env("DISABLE_WP_CRON") ?: false);
+define("DISABLE_WP_CRON", DISABLE_WP_CRON ?: false);
 define("DISALLOW_FILE_EDIT", true);
 
 /**
