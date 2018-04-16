@@ -14,6 +14,7 @@ Env::init();
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
+var_dump($_ENV);
 $dotenv = new Dotenv\Dotenv($root_dir);
 if (file_exists($root_dir . "/.env")) {
     $dotenv->load();
@@ -25,9 +26,6 @@ if (file_exists($root_dir . "/.env")) {
  */
 
 define("WP_ENV", env("WP_ENV") ?: "production");
-var_dump(env("DB_NAME"));
-var_dump(env("DB_USER"));
-var_dump(env("DB_HOST"));
 $env_config = __DIR__ . "/environments/" . WP_ENV . ".php";
 
 if (file_exists($env_config)) {
