@@ -44,9 +44,7 @@ define("WP_SITEURL", env("WP_SITEURL"));
 define("CONTENT_DIR", "/app");
 define("WP_CONTENT_DIR", $webroot_dir . CONTENT_DIR);
 define("WP_CONTENT_URL", WP_HOME . CONTENT_DIR);
-var_dump(getenv("DB_HOST"));
-var_dump(env("DB_HOST"));
-var_dump($_server["DB_HOST"]);
+var_dump(DB_HOST);
 /**
  * DB settings
  */
