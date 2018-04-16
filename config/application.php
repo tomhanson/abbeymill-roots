@@ -24,7 +24,7 @@ if (file_exists($root_dir . "/.env")) {
  * Set up our global environment constant and load its config first
  * Default: production
  */
-define("WP_ENV", env("WP_ENV") ?: "production");
+define("WP_ENV", WP_ENV ?: "production");
 
 $env_config = __DIR__ . "/environments/" . WP_ENV . ".php";
 
@@ -35,8 +35,8 @@ if (file_exists($env_config)) {
 /**
  * URLs
  */
-define("WP_HOME", env("WP_HOME"));
-define("WP_SITEURL", env("WP_SITEURL"));
+define("WP_HOME", WP_HOME);
+define("WP_SITEURL", WP_SITEURL);
 
 /**
  * Custom Content Directory
@@ -48,13 +48,13 @@ var_dump(DB_HOST);
 /**
  * DB settings
  */
-define("DB_NAME", env("DB_NAME"));
-define("DB_USER", env("DB_USER"));
-define("DB_PASSWORD", env("DB_PASSWORD"));
-define("DB_HOST", env("DB_HOST") ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
+define("DB_NAME", DB_NAME);
+define("DB_USER", DB_USER);
+define("DB_PASSWORD", DB_PASSWORD);
+define("DB_HOST", DB_HOST ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
 define("DB_CHARSET", "utf8mb4");
 define("DB_COLLATE", "");
-$table_prefix = env("DB_PREFIX") ?: "wp_";
+$table_prefix = DB_PREFIX ?: "wp_";
 
 
 /**
