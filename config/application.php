@@ -19,12 +19,13 @@ if (file_exists($root_dir . "/.env")) {
     $dotenv->load();
     $dotenv->required(["DB_NAME", "DB_USER", "DB_PASSWORD", "WP_HOME", "WP_SITEURL"]);
 }
-
+var_dump($dotenv);
+var_dump(env());
 /**
  * Set up our global environment constant and load its config first
  * Default: production
  */
-define("WP_ENV", WP_ENV ?: "production");
+define("WP_ENV", env("WP_ENV") ?: "production");
 
 $env_config = __DIR__ . "/environments/" . WP_ENV . ".php";
 
@@ -35,8 +36,8 @@ if (file_exists($env_config)) {
 /**
  * URLs
  */
-define("WP_HOME", WP_HOME);
-define("WP_SITEURL", WP_SITEURL);
+define("WP_HOME", env("WP_HOME"));
+define("WP_SITEURL", env("WP_SITEURL"));
 
 /**
  * Custom Content Directory
@@ -48,32 +49,32 @@ var_dump(DB_HOST);
 /**
  * DB settings
  */
-define("DB_NAME", DB_NAME);
-define("DB_USER", DB_USER);
-define("DB_PASSWORD", DB_PASSWORD);
-define("DB_HOST", DB_HOST ?: "localhost");
+define("DB_NAME", env("DB_NAME"));
+define("DB_USER", env("DB_USER"));
+define("DB_PASSWORD", env("DB_PASSWORD"));
+define("DB_HOST", env("DB_HOST") ?: "wordpress.cbm7nzvweui5.us-east-1.rds.amazonaws.com");
 define("DB_CHARSET", "utf8mb4");
 define("DB_COLLATE", "");
-$table_prefix = DB_PREFIX ?: "wp_";
+$table_prefix = env("DB_PREFIX") ?: "wp_";
 
 
 /**
  * Authentication Unique Keys and Salts
  */
-define("AUTH_KEY", AUTH_KEY);
-define("SECURE_AUTH_KEY", SECURE_AUTH_KEY);
-define("LOGGED_IN_KEY", LOGGED_IN_KEY);
-define("NONCE_KEY", NONCE_KEY);
-define("AUTH_SALT", AUTH_SALT);
-define("SECURE_AUTH_SALT", SECURE_AUTH_SALT);
-define("LOGGED_IN_SALT", LOGGED_IN_SALT);
-define("NONCE_SALT", NONCE_SALT);
+define("AUTH_KEY", env("AUTH_KEY"));
+define("SECURE_AUTH_KEY", env("SECURE_AUTH_KEY"));
+define("LOGGED_IN_KEY", env("LOGGED_IN_KEY"));
+define("NONCE_KEY", env("NONCE_KEY"));
+define("AUTH_SALT", env("AUTH_SALT"));
+define("SECURE_AUTH_SALT", env("SECURE_AUTH_SALT"));
+define("LOGGED_IN_SALT", env("LOGGED_IN_SALT"));
+define("NONCE_SALT", env("NONCE_SALT"));
 
 /**
  * Custom Settings
  */
 define("AUTOMATIC_UPDATER_DISABLED", true);
-define("DISABLE_WP_CRON", DISABLE_WP_CRON ?: false);
+define("DISABLE_WP_CRON", env("DISABLE_WP_CRON") ?: false);
 define("DISALLOW_FILE_EDIT", true);
 
 /**
