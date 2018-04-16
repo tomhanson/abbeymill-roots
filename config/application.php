@@ -26,11 +26,8 @@ if (file_exists($root_dir . "/.env")) {
  */
 define("WP_ENV", env("WP_ENV") ?: "production");
 
-var_dump(env("WP_ENV"));
-var_dump(getenv("WP_ENV"));
-
 $env_config = __DIR__ . "/environments/" . WP_ENV . ".php";
-
+var_dump($env_config);
 if (file_exists($env_config)) {
     require_once $env_config;
 }

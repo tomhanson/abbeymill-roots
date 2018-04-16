@@ -8,7 +8,7 @@ define("DB_HOST",     $_dbsettings["host"]          );
 define("WP_HOME", getenv("WP_HOME"));
 define("WP_SITEURL", getenv("WP_SITEURL"));
 // var_dump($_dbsettings);
-var_dump(getenv("WP_HOME"));
+// var_dump(getenv("WP_HOME"));
 var_dump(getenv("WP_HOME"));
 ini_set("display_errors", 0);
 define("WP_DEBUG_DISPLAY", false);
